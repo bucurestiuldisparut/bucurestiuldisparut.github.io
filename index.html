@@ -11,8 +11,7 @@
   gtag('config', 'G-YZ5EEX4YPJ');
 </script>
 <meta charset="utf-8" />
-<meta name="description" content="Fotografii aeriene București 1927, 1938,
-1943, 1966, 1978, 1980">
+<meta name="description" content="Fotografii aeriene București">
 <title>București</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
@@ -269,11 +268,11 @@ if (window.location.hash !== '') {
     }
 }
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZm9zdHVsYnVjdXJlc3RpIiwiYSI6Ii1wcHhHMlUifQ.PNvu3KPFdR4WWx6Yk4sCYw';
+mapboxgl.accessToken = 'pk.eyJ1IjoidmVudHVyYTg2IiwiYSI6ImNrb3loZ3RmbjBwdngyb21wOWRyOTIzeG0ifQ.GOfVZiJOdCp865_GnHJWMA';
 // Create the map
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/fostulbucuresti/ckzl4qmho001o14mktp00jckq?optimize=true',
+    style: 'mapbox://styles/ventura86/ckoyhlyk91wd917o2y2uxarfe?optimize=true',
     locale: {
         'NavigationControl.ZoomIn': 'Mărește',
         'NavigationControl.ZoomOut': 'Micșorează',
@@ -326,207 +325,6 @@ map.on('load', () => {
     }
     first_street_layer = current_street_layers[0];
 
-    map.addSource('1927_source', {
-        'type': 'raster',
-        'url': 'mapbox://fostulbucuresti.sz06ax2m',
-        'attribution': 'Compagnie Aérienne Française, 1927',
-        'tileSize': 256,
-        'maxzoom': 17
-    });
-    map.addLayer({
-        'id': '1927',
-        'source': '1927_source',
-        'type': 'raster',
-        'layout': {
-            'visibility': (typeof activeLayers['a1'] === 'undefined') ? 'none' : activeLayers['a1'],
-        }
-    }, first_street_layer);
-
-    map.addSource('1938_source', {
-        'type': 'raster',
-        'url': 'mapbox://fostulbucuresti.wqy4byvp',
-        'attribution': 'Luftwaffe, 1938 (National Archives, courtesy of John Calvin)',
-        'tileSize': 256,
-        'maxzoom': 17
-    });
-    map.addLayer({
-        'id': '1938',
-        'source': '1938_source',
-        'type': 'raster',
-        'layout': {
-            'visibility': (typeof activeLayers['a2'] === 'undefined') ? 'none' : activeLayers['a2'],
-        }
-    }, first_street_layer);
-
-    map.addSource('1943_source', {
-        'type': 'raster',
-        'url': 'mapbox://fostulbucuresti.6429zeom',
-        'attribution': 'SAAF 60 Squadron, 1943, courtesy of Col. David H. Klaus, USAF, Retired',
-        'tileSize': 256,
-        'maxzoom': 19
-    });
-    map.addLayer({
-        'id': '1943',
-        'source': '1943_source',
-        'type': 'raster',
-        'layout': {
-            'visibility': (typeof activeLayers['a6'] === 'undefined') ? 'none' : activeLayers['a6'],
-        },
-    }, first_street_layer);
-    
-    var urls_1966 = ['fostulbucuresti.0cvkcdk1', 'fostulbucuresti.6mflkcc7', 'fostulbucuresti.1lhllfnd',
-                     'fostulbucuresti.dlcbrygd', 'fostulbucuresti.9jqv1qtp', 'fostulbucuresti.10q8y7hq'];
-    for (var i = 0; i < urls_1966.length; i++) {
-        map.addSource('1966_source_' + i, {
-            'type': 'raster',
-            'url': 'mapbox://' + urls_1966[i],
-            'attribution': 'Corona (KH-4A), High Resolution, 1966, USGS',
-            'tileSize': 256,
-            'maxzoom': 18
-        });
-        map.addLayer({
-            'id': '1966_' + i,
-            'source': '1966_source_' + i,
-            'type': 'raster',
-            'layout': {
-                'visibility': (typeof activeLayers['a3'] === 'undefined') ? 'none' : activeLayers['a3'],
-            }
-        }, first_street_layer);
-    };
-
-    var urls_1976 = ['fostulbucuresti.5uk1vt68', 'fostulbucuresti.8lvkco9y', 'fostulbucuresti.52ptpwzs'];
-    for (var i = 0; i < urls_1976.length; i++) {
-        map.addSource('1976_source_' + i, {
-            'type': 'raster',
-            'url': 'mapbox://' + urls_1976[i],
-            'attribution': 'KH-9 Hexagon, High Resolution, 1976, USGS',
-            'tileSize': 256,
-            'maxzoom': 18
-        });
-        map.addLayer({
-            'id': '1976_' + i,
-            'source': '1976_source_' + i,
-            'type': 'raster',
-            'layout': {
-                'visibility': (typeof activeLayers['a8'] === 'undefined') ? 'none' : activeLayers['a8'],
-            }
-        }, first_street_layer);
-    }
-
-    var urls_1977 = ['fostulbucuresti.5pd5vijv', 'fostulbucuresti.cc6fi3yi']
-    for (var i = 0; i < urls_1977.length; i++) {
-        map.addSource('1977_source_' + i, {
-            type: 'raster',
-            url: 'mapbox://' + urls_1977[i],
-            'attribution': 'KH-9 Hexagon, High Resolution, 1977, USGS',
-            'tileSize': 256,
-            'maxzoom': 17
-        });
-        map.addLayer({
-            'id': '1977_' + i,
-            'source': '1977_source_' + i,
-            'type': 'raster',
-            'layout': {
-                'visibility': (typeof activeLayers['a9'] === 'undefined') ? 'none' : activeLayers['a9']
-            }
-        }, first_street_layer);
-    }
-
-    map.addSource('1978_source', {
-        'type': 'raster',
-        'url': 'mapbox://fostulbucuresti.2ezig8uc',
-        'attribution': 'KH-9 Hexagon, Low Resolution Mapping, 1978, USGS',
-        'tileSize': 256,
-        'maxzoom': 15,
-    });
-    map.addLayer({
-        'id': '1978',
-        'source': '1978_source',
-        'type': 'raster',
-        'layout': {
-            'visibility': (typeof activeLayers['a5'] === 'undefined') ? 'none' : activeLayers['a5'],
-        }
-    }, first_street_layer);
-
-    var urls_1980 = ['fostulbucuresti.cxfce0jt', 'fostulbucuresti.5mitx35s', 'fostulbucuresti.2t5ci0sl']
-    for (var i = 0; i < urls_1980.length; i++) {
-        map.addSource('1980_source_' + i, {
-            type: 'raster',
-            url: 'mapbox://' + urls_1980[i],
-            'attribution': 'KH-9 Hexagon, High Resolution, 1980, USGS',
-            'tileSize': 256,
-            'maxzoom': 17
-        });
-        map.addLayer({
-            'id': '1980_' + i,
-            'source': '1980_source_' + i,
-            'type': 'raster',
-            'layout': {
-                'visibility': (typeof activeLayers['a7'] === 'undefined') ? 'none' : activeLayers['a7']
-            }
-        }, first_street_layer);
-    }
-
-    map.addSource('streets_source', {
-        type: 'vector',
-        url: 'mapbox://fostulbucuresti.ckz7hp9jv0wu820p7bj06yuh6-7eot4'
-    });
-
-    map.addLayer({
-        'id': 'streets_lines',
-        'type': 'line',
-        "source": "streets_source",
-        "source-layer": "strazi",
-        "layout": {
-            "line-join": "round",
-            "line-cap": "round",
-            'visibility': (typeof activeLayers['p1'] === 'undefined') ? 'none' : activeLayers['p1']
-        },
-        "paint": {
-            "line-color": "rgba(230, 230, 230, 0.6)",
-            'line-width': [
-                'interpolate', ['linear'],
-                ['zoom'],
-                12, ["*", ["get", "stroke-width"],
-                    ["/", 1, 10]
-                ],
-                14, ["*", ["get", "stroke-width"],
-                    ["/", 1, 2]
-                ],
-                16, ["*", ["get", "stroke-width"],
-                ],
-                20, ["*", ["get", "stroke-width"],
-                    ["*", 1, 4]
-                ]
-            ],
-        }
-    });
-
-    map.addLayer({
-        "id": "streets_labels",
-        "type": "symbol",
-        "source": "streets_source",
-        "source-layer": "strazi",
-        "minzoom": 1,
-        "layout": {
-            "text-field": '{title}',
-            "text-font": ["DIN Pro Medium", "Arial Unicode MS Regular"],
-            //"text-font": ["Open Sans Regular"],
-            "text-size": 12,
-            "text-padding": 1,
-            "text-max-angle": 30,
-            "symbol-placement": "line",
-            "text-rotation-alignment": "map",
-            "text-pitch-alignment": "viewport",
-            'visibility': (typeof activeLayers['p1'] === 'undefined') ? 'none' : activeLayers['p1']
-        },
-        "paint": {
-            "text-color": "hsl(0, 0%, 100%)",
-            "text-halo-color": "hsl(0, 5%, 3%)",
-            "text-halo-width": 1,
-            "text-halo-blur": 0.5
-        }
-    });
 
     map.loadImage('https://a.tiles.mapbox.com/v4/marker/pin-m-camera+1087bf@2x.png?access_token=' + mapboxgl.accessToken, function(error, image) {
         if (error) throw error;
@@ -652,17 +450,6 @@ map.on('moveend', updateCoordHash);
 
 // Define all the layers
 const toggleableLayers = [
-    ['1927', 'a1', ['1927']],
-    ['1938', 'a2', ['1938']],
-    ['1943', 'a6', ['1943']],
-    ['1966', 'a3', ['1966_0', '1966_1', '1966_2', '1966_3', '1966_4', '1966_5']],
-    ['1976', 'a8', ['1976_0', '1976_1', '1976_2']],
-    ['1977', 'a9', ['1977_0', '1977_1']],
-    ['1978', 'a5', ['1978']],
-    ['1980', 'a7', ['1980_0', '1980_1', '1980_2']],
-    ['Străzi prezent', 'a4', current_street_layers],
-    //['Străzi distruse', 'p1', ['streets']],
-    ['Străzi distruse', 'p1', ['streets_lines', 'streets_labels']],
     ['Fotografii', 'p2', ['photos_points', 'photos_direction', 'photos_outline']]
 ];
 
@@ -716,6 +503,7 @@ toggleableLayers.forEach(layer => {
 const layersMenu = document.getElementById('menu-panel');
 layersMenu.appendChild(menu);
 
+
 //Create button to hide/show layers
 const button = document.createElement('button');
 button.className = "menu-button menu-button-chevron";
@@ -745,15 +533,7 @@ text.innerHTML = '<div class="about-content"><font face="sans-serif">\
 <p>Acest proiect nu ar fi fost posibil fara ajutorul: fostulbucuresti@gmail.com</p>\
 <p>Rotire hartă: <i>Control + click</i> sau <i>click dreapta</i></p>\
 Sursele fotografiilor aeriene:\
-<ul style="list-style: round;">\
-<li><b>1927</b> - Compagnie aérienne française (CAF), Biblioteca Academiei, obținute prin amabilitatea lui <a href="http://www.costingheorghe.ro/thenow/" target="_blank">Costin Gheorghe</a></li>\
-<li><b>1938, vara</b> - Dosar german de obiective militare din România, National Archives, S.U.A., obținute prin amabilitatea lui John Calvin</li>\
-<li><b>1943, 19 august</b> - Zboruri de recunoaștere ale escadrilei <a href="http://www.saairforce.co.za/the-airforce/squadrons/12/60-squadron" target="_blank">60 SAAF</a> (South African Air Force), US Air Force Historical Research Center, scanate de către <a href="http://www.low-level-ploesti.org/" target="_blank">Col. David H. Klaus, USAF, Retired</a>. Obținute prin amabilitatea lui <a href="http://macristudio.com" target="_blank">Ionuț Macri</a>.</li>\
-<li><b>1966, 12 iulie</b> - Programul de sateliți de spionaj <a href="https://en.wikipedia.org/wiki/Corona_(satellite)" target="_blank"> Corona (KH-4A)</a>, U.S. Geological Survey, obținute prin amabilitatea lui Ionuț Sandric</li>\
-<li><b>1976, 20 februarie</b> - Programul de sateliți de spionaj <a href="https://en.wikipedia.org/wiki/KH-9_Hexagon" target="_blank">KH-9 Hexagon</a>, U.S. Geological Survey, obținute cu ajutorul lui <a href="https://www.researchgate.net/profile/Dragos-Toma-Danila" target="_blank">Dragoș Toma-Dănilă</a></li>\
-<li><b>1977, 13 septembrie</b> - Programul de sateliți de spionaj <a href="https://en.wikipedia.org/wiki/KH-9_Hexagon" target="_blank">KH-9 Hexagon</a>, U.S. Geological Survey, obținute cu ajutorul lui <a href="https://www.researchgate.net/profile/Dragos-Toma-Danila" target="_blank">Dragoș Toma-Dănilă</a></li>\
-<li><b>1978, 30 martie</b> - Programul sateliți de spionaj <a href="https://en.wikipedia.org/wiki/KH-9_Hexagon" target="_blank">KH-9 Hexagon</a>, U.S. Geological Survey </li>\
-<li><b>1980, 16 iulie</b> - Programul sateliți de spionaj <a href="https://en.wikipedia.org/wiki/KH-9_Hexagon" target="_blank">KH-9 Hexagon</a>, U.S. Geological Survey </li></ul></font>\
+</font>\
 </p></font></div>';
 
 const element = document.createElement('div');
